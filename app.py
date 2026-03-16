@@ -618,7 +618,7 @@ elif ss.current_menu == "밤":
                         st.markdown(f"**벌 행동 #{idx}**")
                         st.caption(f"지목한 늑대: {label_for(wolf_name)}")
                         st.caption(f"반격한 벌: {label_for(bee_name)}")
-                        st.success(f"{label_for(bee_name)} / {label_for(wolf_name)} - 벌과 늑대 함께 사망 예정")
+                        st.success(f"{label_for(bee_name)} / {label_for(wolf_name)} - 벌의 반격으로 늑대와 함께 사망")
             return
 
         actors = adf[adf["역할"] == role]["이름"].tolist()
@@ -733,11 +733,11 @@ elif ss.current_menu == "밤":
                             elif target_original == "벌":
                                 queue_death(t1, f"{label_for(actor)} 공격")
                                 queue_death(actor, f"{label_for(t1)} 반격")
-                                msg = f"{label_for(t1)} / {label_for(actor)} - 벌과 늑대 함께 사망 예정"
-                                add_round_summary(f"늑대/벌: {label_for(actor)} 와 {label_for(t1)} 함께 사망 예정")
+                                msg = f"{label_for(t1)} / {label_for(actor)} - 벌의 반격으로 늑대 함께 사망"
+                                add_round_summary(f"늑대/벌: {label_for(actor)} 와 {label_for(t1)} 함께 사망")
                             else:
                                 queue_death(t1, f"{label_for(actor)} 공격")
-                                msg = f"{label_for(t1)} - 사망 예정"
+                                msg = f"{label_for(t1)} - 사망"
                                 add_round_summary(f"늑대: {label_for(actor)} 가 {label_for(t1)} 공격")
 
                             record_result(key, msg)
