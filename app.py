@@ -51,7 +51,7 @@ def players_template(player_count: int) -> pd.DataFrame:
             "역할": role,
             "원래역할": role,
             "생존": True,
-            "현재지역": REGIONS[i % len(REGIONS)],
+            "현재지역": None,
             "메모": "",
             "사망사유": "",
             "보호종료라운드": 0,
